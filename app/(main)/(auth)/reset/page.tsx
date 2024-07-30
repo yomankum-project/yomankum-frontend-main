@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react"
 
 export default function Reset() {
-  return (
-    <div>Reset</div>
-  )
+  return <div>Reset</div>
 }
