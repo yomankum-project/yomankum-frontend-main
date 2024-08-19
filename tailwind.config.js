@@ -9,12 +9,12 @@ module.exports = {
   ],
   prefix: "",
   theme: {
+    screens: {
+      sm: "480px",
+      md: "768px",
+      xl: "1440px",
+    },
     extend: {
-      screens: {
-        sm: "480px",
-        md: "768px",
-        xl: "1440px",
-      },
       colors: {
         error: "#FF2FF2",
         success: "#1E4AE9",
