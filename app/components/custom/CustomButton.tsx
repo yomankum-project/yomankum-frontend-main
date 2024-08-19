@@ -29,7 +29,7 @@ export const CustomButton = ({
       className={cn(
         {
           "text-white bg-primary hover:bg-primary/90": bg === "active",
-          "text-primary bg-neutral hover:bg-neutral/90": bg === "inactive",
+          "text-black bg-neutral hover:bg-neutral/90": bg === "inactive",
         },
         className
       )}
