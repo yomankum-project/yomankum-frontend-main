@@ -16,7 +16,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        error: "#FF2FF2",
+        error: "#FF2F22",
         success: "#1E4AE9",
         black: "#0C1421",
         white: "#FFFFFF",
