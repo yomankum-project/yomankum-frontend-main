@@ -1,5 +1,7 @@
-import React from "react"
+import React from 'react'
 
 export default function Signup() {
-  return <div>signup</div>
+  return (
+    <div>signup</div>
+  )
 }

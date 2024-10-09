@@ -1,5 +1,7 @@
-import React from "react"
+import React from 'react'
 
 export default function AccountBook() {
-  return <div>AccountBook</div>
+  return (
+    <div>AccountBook</div>
+  )
 }

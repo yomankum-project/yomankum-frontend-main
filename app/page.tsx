@@ -1,5 +1,9 @@
-import { Main } from "./components"
+import Image from "next/image";
 
 export default function Home() {
-  return <Main />
+  return (
+    <main className="main">
+      main
+    </main>
+  );
 }
