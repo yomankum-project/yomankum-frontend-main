@@ -1,5 +1,12 @@
-import React from "react"
+import { UserProfileHeader } from "@/components"
+import { SearchNav } from "@/components/SearchNav"
 
 export default function AccountBook() {
-  return <div>AccountBook</div>
+  return (
+    <div>
+      <UserProfileHeader />
+
+      <SearchNav />
+    </div>
+  )
 }
