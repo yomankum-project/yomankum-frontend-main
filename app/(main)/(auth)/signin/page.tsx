@@ -14,29 +14,37 @@ import KakaoLogin from "@/assets/webp/kakao_login.webp"
 import NaverLogin from "@/assets/webp/naver_login.webp"
 import { CustomButton } from "@/components"
 import { useRouter } from "next/navigation"
+import { z } from "zod"
+import { zodResolver } from "@hookform/resolvers/zod"
+
+const SigninSchema = z.object({
+  email: z
+    .string()
+    .min(1, { message: "아이디 또는 비밀번호가 일치하지 않습니다." }),
+  password: z
+    .string()
+    .min(1, { message: "아이디 또는 비밀번호가 일치하지 않습니다." }),
+})
+
+type SigninSchemaType = z.infer<typeof SigninSchema>
 
 export default function Signin() {
   const router = useRouter()
-  const hookForm = useForm({
+
+  const hookForm = useForm<SigninSchemaType>({
+    resolver: zodResolver(SigninSchema),
     defaultValues: {
       email: "",
       password: "",
     },
-    errors: {
-      email: {
-        type: "required",
-        message: "아이디 또는 비밀번호가 일치하지 않습니다.",
-      },
-      password: {
-        type: "required",
-        message: "아이디 또는 비밀번호가 일치하지 않습니다.",
-      },
-    },
   })
 
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: SigninSchemaType) => {
     console.log(data)
+
+    router.push("/main")
   }
+
   return (
     <div className="flex justify-center items-center w-full h-full">
       <div className="border border-neutral-3 max-w-[580px] p-[48px]">
@@ -80,10 +88,12 @@ export default function Signin() {
             placeholder="password"
             {...hookForm.register("password", { required: true })}
           />
-          {/* {(hookForm.formState.errors.password ||
+          {(hookForm.formState.errors.password ||
             hookForm.formState.errors.email) && (
-            <p role="alert">First name is required</p>
-          )} */}
+            <p className="text-error font-par6" role="alert">
+              아이디 또는 비밀번호가 일치하지 않습니다.
+            </p>
+          )}
 
           <div className="pb-[52px]" />
 
@@ -134,7 +144,7 @@ export default function Signin() {
           <div className="pb-[30px]" />
 
           <CustomButton type="submit" className="w-full">
-            다음
+            로그인
           </CustomButton>
         </form>
 
