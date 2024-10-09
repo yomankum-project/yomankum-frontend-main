@@ -9,14 +9,14 @@ module.exports = {
   ],
   prefix: "",
   theme: {
+    screens: {
+      sm: "480px",
+      md: "768px",
+      xl: "1440px",
+    },
     extend: {
-      screens: {
-        sm: "480px",
-        md: "768px",
-        xl: "1440px",
-      },
       colors: {
-        error: "#FF2FF2",
+        error: "#FF2F22",
         success: "#1E4AE9",
         black: "#0C1421",
         white: "#FFFFFF",
