@@ -1,3 +1,5 @@
 export * from "./main"
 export * from "./custom"
-export * from "./SideNav"
+export * from "./SideNavBar"
+export * from "./UserProfileHeader"
+
