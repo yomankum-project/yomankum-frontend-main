@@ -11,7 +11,7 @@ export default function AccountBookLayout({
     <div className="flex min-h-screen">
       <SideNavBar />
 
-      <main className="flex-1 pt-[40px] px-[60px]">{children}</main>
+      <main className="flex-1 pt-[40px] px-[60px] flex">{children}</main>
     </div>
   )
 }
